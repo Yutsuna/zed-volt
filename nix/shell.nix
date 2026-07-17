@@ -39,11 +39,9 @@ mkShell {
     export PATH="$PWD/.direnv/bin:$PATH"
 
     if ! command -v extension_cli &> /dev/null; then
-        cat << EOF
-Zed's 'extension_cli' tool is not yet installed in your project.
-Run the following command to install it interactively:
-setup-zed-cli
-        EOF
+        echo "Zed's 'extension_cli' tool is not yet installed in your project."
+        echo "Run the following command to install it interactively:"
+        echo "setup-zed-cli"
     fi
   '';
 }
