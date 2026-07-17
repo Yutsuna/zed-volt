@@ -1,0 +1,5 @@
+name = "Volt"
+grammar = "volt"
+path_suffixes = ["volt", "vlx", "vl"]
+line_comments = ["# "]
+block_comment = ["#{", "#}"]

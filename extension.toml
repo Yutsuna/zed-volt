@@ -1,0 +1,10 @@
+id = "zed-volt"
+name = "Volt Language Support"
+version = "0.1.0"
+schema_version = 1
+authors = ["Yutsuna"]
+description = "Volt language general support tools"
+
+[grammars.volt]
+repository = "file:///home/Yutsuna/Projects/Volt/tree-sitter-volt/"
+rev = "main"
