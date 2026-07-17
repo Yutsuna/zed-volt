@@ -1,9 +1,3 @@
-[[schema.association]]
-name = "Zed Extension Manifest"
-uri = "https://raw.githubusercontent.com/zed-industries/zed/main/crates/extension/schemas/extension.json"
-include = ["extension.toml"]
-
-[[schema.association]]
-name = "Zed Language Configuration"
-uri = "https://raw.githubusercontent.com/zed-industries/zed/main/crates/extension/schemas/language.json"
-include = ["languages/**/config.toml"]
+[formatting]
+align_entries = false
+reorder_keys = true
