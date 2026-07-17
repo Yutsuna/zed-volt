@@ -27,12 +27,9 @@
       });
 
       devShells = forAllSystems (
-        pkgs:
-        let
-          voltExtension = pkgs.callPackage ./nix/package.nix { inherit inputs version; };
-        in
-        {
-          default = pkgs.callPackage ./nix/shell.nix { inherit voltExtension; };
+        pkgs: {
+          # Appel direct de shell.nix sans avoir à lui injecter voltExtension
+          default = pkgs.callPackage ./nix/shell.nix { };
         }
       );
     };

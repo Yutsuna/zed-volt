@@ -1,36 +1,24 @@
 {
   mkShell,
   taplo,
-  voltExtension,
   pkg-config,
   openssl,
   cargo,
   rustc,
   git,
-  writeShellScriptBin,
+  cmake,
+  voltExtension ? null,
+  callPackage,
   ...
 }:
 let
-  setupZedCli = writeShellScriptBin "setup-zed-cli" ''
-    set -e
-    export PKG_CONFIG_PATH="${openssl.dev}/lib/pkg-config"
-
-    mkdir -p .direnv/bin
-
-    echo "Compiling extension_cli from Zed's repository..."
-
-    CARGO_TARGET_DIR=.direnv/cargo-target cargo install \
-      --root .direnv \
-      --git https://github.com/zed-industries/zed \
-      extension_cli
-
-    echo -e "\n'extension_cli' has been successfully compiled into .direnv/bin!"
-  '';
+  setupZedCli = callPackage ./zed-cli.nix { };
+  zedCompileExtension = callPackage ./zed-compile.nix { };
 in
 mkShell {
   name = "zed-volt-dev-shell";
 
-  inputsFrom = [ voltExtension ];
+  inputsFrom = if voltExtension != null then [ voltExtension ] else [];
 
   buildInputs = [
     taplo
@@ -39,7 +27,9 @@ mkShell {
     cargo
     rustc
     git
+    cmake
     setupZedCli
+    zedCompileExtension
   ];
 
   shellHook = ''
