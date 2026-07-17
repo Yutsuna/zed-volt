@@ -1,10 +1,10 @@
 {
-  "lsp": {
-    "taplo": {
-      "binary": {
-        "path": "taplo",
-        "arguments": []
-      }
+  "languages": {
+    "TOML": {
+      "language_servers": [
+        "taplo"
+      ],
+      "enable_language_server": true
     }
-  }
+  },
 }
