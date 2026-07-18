@@ -4,7 +4,8 @@ version = "0.1.0"
 schema_version = 1
 authors = ["Yutsuna"]
 description = "Volt language general support tools"
+repository = "https://github.com/Yutsuna/zed-volt"
 
 [grammars.volt]
 repository = "file:///home/Yutsuna/Projects/Volt/tree-sitter-volt/"
-rev = "main"
+rev = "master"

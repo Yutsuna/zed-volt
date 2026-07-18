@@ -1,0 +1,1 @@
+/home/Yutsuna/Projects/Volt/tree-sitter-volt/queries/locals.scm
