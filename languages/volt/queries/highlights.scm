@@ -1,1 +1,0 @@
-/home/Yutsuna/Projects/Volt/tree-sitter-volt/queries/highlights.scm
