@@ -7,5 +7,5 @@ description = "Volt language general support tools"
 repository = "https://github.com/Yutsuna/zed-volt"
 
 [grammars.volt]
-repository = "file:///home/Yutsuna/Projects/Volt/tree-sitter-volt/"
-rev = "master"
+repository = "https://github.com/Yutsuna/tree-sitter-volt"
+rev = "fa36607c54bcdda12dc5ad9a1070ef3a22b4cd2f"
