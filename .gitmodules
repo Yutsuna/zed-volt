@@ -1,0 +1,3 @@
+[submodule "tree-sitter-volt"]
+	path = tree-sitter-volt
+	url = git@github.com:Yutsuna/tree-sitter-volt
