@@ -20,45 +20,31 @@
 (mixin_definition
   name: (type_identifier) @type)
 
-(component_definition
-  name: (type_identifier) @type)
-
 ; Keywords
 ;------------------------------------------------------------------------------
 
 [
   "abstract"
   "and"
-  "case"
-  "circuit"
   "class"
-  "component"
   "def"
   "do"
   "else"
   "elsif"
   "end"
-  "for"
   "getter"
   "if"
-  "in"
   "include"
-  "macro"
   "mixin"
   "module"
-  "not"
   "of"
   "or"
-  "property"
   "raise"
   "return"
-  "setter"
   "sizeof"
   "struct"
-  "then"
   "typeof"
   "unless"
-  "when"
   "while"
   "yield"
 ] @keyword
@@ -68,7 +54,7 @@
 
 (visibility_modifier) @keyword
 
-; Function calls & definitions
+; Function calls
 ;------------------------------------------------------------------------------
 
 (call_expression
@@ -78,25 +64,20 @@
 (call_expression
   (identifier) @function)
 
-(method_definition
-  name: (identifier) @function)
-
-(method_definition
-  name: (operator_identifier) @function)
-
-(abstract_method_definition
-  name: (identifier) @function)
-
-(abstract_method_definition
-  name: (operator_identifier) @function)
-
-(macro_definition
-  name: (identifier) @function)
-
-; JSX Elements
+; Function definitions
 ;------------------------------------------------------------------------------
 
-(jsx_attribute_name) @attribute
+(method_definition
+  name: (identifier) @function)
+
+(method_definition
+  name: (operator_identifier) @function)
+
+(abstract_method_definition
+  name: (identifier) @function)
+
+(abstract_method_definition
+  name: (operator_identifier) @function)
 
 ; Variables & Instance variables
 ;------------------------------------------------------------------------------
@@ -107,9 +88,6 @@
 
 (parameter
   name: (identifier) @variable.parameter)
-
-(parameter
-  name: (instance_variable) @variable.parameter)
 
 ; Member declarations
 ;------------------------------------------------------------------------------
@@ -128,8 +106,6 @@
 
 (symbol_literal) @string.special.symbol
 
-(character_literal) @string.special
-
 (regex) @string.special.regex
 
 (escape_sequence) @escape
@@ -145,14 +121,6 @@
   "#{" @punctuation.special
   "}" @punctuation.special) @embedded
 
-(macro_interpolation
-  "{{" @punctuation.special
-  "}}" @punctuation.special) @embedded
-
-(macro_statement
-  "{%" @punctuation.special
-  "%}" @punctuation.special) @keyword.directive
-
 (comment) @comment
 (doc_comment) @comment
 
@@ -161,7 +129,8 @@
 
 (annotation
   "@[" @punctuation.special
-  "]" @punctuation.special) @attribute
+  (type_identifier) @attribute
+  "]" @punctuation.special)
 
 ; Operators
 ;------------------------------------------------------------------------------
@@ -192,8 +161,6 @@
   "^"
   "~"
   "->"
-  ".."
-  "..."
 ] @operator
 
 (assignment_operator) @operator
@@ -206,7 +173,6 @@
   ";"
   "."
   ":"
-  "::"
 ] @punctuation.delimiter
 
 [
