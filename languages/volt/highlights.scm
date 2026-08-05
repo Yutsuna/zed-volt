@@ -28,6 +28,7 @@
 
 [
   "abstract"
+  "external"
   "and"
   "class"
   "def"
@@ -37,6 +38,7 @@
   "end"
   "enum"
   "getter"
+  "setter"
   "if"
   "include"
   "mixin"
@@ -115,6 +117,7 @@
 ] @constant.builtin
 
 (comment) @comment
+(block_comment) @comment
 (doc_comment) @comment
 
 ; Annotations
