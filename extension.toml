@@ -8,5 +8,5 @@ repository = "https://github.com/Yutsuna/zed-volt"
 
 [grammars.volt]
 repository = "https://github.com/Yutsuna/tree-sitter-volt"
-rev = "3825f60c8465de256c5ad584b38569e86356faba"
+rev = "d26d44fe26d3647a6d0e6a2d21c80dde0fac3c58"
 
